@@ -1,0 +1,108 @@
+@import "vars"
+@import "fonts"
+@import "../libs/jquery-nice-select-1.1.0/scss/nice-select.scss"
+@import "toggle-menu"
+
+html, body, h1
+	margin: 0
+	padding: 0
+a, li
+	color: $text-color
+	text-decoration: none
+	list-style-type: none
+	&:hover, &:focus, &:active
+		outline: none
+html 
+	width: 1920px
+	height: 1080px
+body
+	font-family: "Roboto Regular", "Helvetica", sans-serif
+	background-color: $main-color
+	font-size: 16px
+	.header
+		height: 50px
+		width: 100%
+		background-color: $white
+		box-shadow: 0 0 10px rgba(#040404, .09)
+		@extend %display-flex
+		&__logo
+			width: 280px
+			height: 50px
+			background-color: #2f3b4c
+			h1
+				font-family: "Roboto Bold", "Helvetica", sans-serif
+				font-weight: bold
+				text-transform: uppercase
+				color: $white
+				font-size: 27px
+				padding: 10px 35px
+		&__content
+			@extend %display-flex
+			justify-content: space-between
+			width: 85%
+			&-nav
+				@extend %display-flex
+				align-items: center
+				ul 
+					@extend %display-flex
+					.nice-select
+						@extend %nice-select
+						margin-right: -10px
+						&:after
+							right: 7px
+						span 
+								transition: color .3s ease
+								&:hover
+									color: $accent-color
+						.list 
+							display: block
+							width: 120px
+							left: -10px
+							top: 110%
+							box-shadow: none
+							border-radius: 0
+							margin-top: 0
+							
+					a 
+						margin-left: 75px
+						line-height: 2.5
+						transition: color .3s ease
+						&:hover
+							color: $accent-color
+			&-profile 
+				@extend %display-flex
+				align-items: center
+				figure
+					color: $text-color
+					margin: auto
+					border-left: 1px solid #e1e7f0
+					padding: 11px 25px
+					img
+						vertical-align: middle
+						margin-right: 10px
+					figcaption
+						display: inline-block
+				.nice-select
+					@extend %nice-select
+					text-transform: uppercase
+					width: 100px
+					border-left: 1px solid #e1e7f0
+					padding: 5px 45px 45px 23px
+					border-radius: 0
+					&:after 
+						right: 22px
+					.list
+							width: 100px
+							left: 0
+							top: 100%
+							box-shadow: none
+							border-radius: 0
+							margin-top: 0
+				.unlock 
+					width: 17px
+					height: 24px
+					padding: 12px 20px 12px 25px
+					border-left: 1px solid #e1e7f0
+
+
+			

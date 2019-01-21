@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>labinvent</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header class="header">
+		<div class="header__logo">
+			<h1>lims</h1>
+		</div>
+		<div class="header__content">
+			
+			<nav class="header__content-nav">
+				<a href="#" id="toggle-menu" class="toggle-menu" onclick="toggleMenu()"><span></span></a>
+				<ul>
+					<select name="header__content-nav--select" id="nav-select">
+						<option selected value="instruments">Instruments</option>
+						<option value="view all">View all</option>
+						<option value="add new">Add new</option>
+					</select>
+					<li><a href="#">Widgets</a></li>
+					<li><a href="#">View</a></li>
+					<li><a href="#">Administration</a></li>
+				</ul>
+			</nav>
+			<div class="header__content-profile">
+				<figure>
+					<img src="img/profile.png" alt="">
+					<figcaption>Alexander</figcaption>
+				</figure>
+				<select name="header__content-profile--select" id="profile-select">
+					<option selected value="eng">eng</option>
+					<option value="rus">rus</option>
+				</select>
+				<img class="unlock" src="img/unlock.png" alt="">
+			</div>
+		</div>
+	</header>
+	<script src="libs/jQuery-3.3.1/jquery.js"></script>
+	<script src="libs/jquery-nice-select-1.1.0/js/jquery.nice-select.js"></script>
+	<script src="labinvent.js"></script>
+</body>
+</html>
