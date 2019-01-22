@@ -1,0 +1,90 @@
+.methods
+	@extend %display-flex
+	flex-direction: column
+	color: #000
+	width: 1375px
+	height: 485px
+	border: 1px solid $border-color
+	margin: 15px 20px
+	&__topPanel
+		@extend %display-flex
+		width: 100%
+		height: 45px
+		border-bottom: 1px solid $border-color
+		&-worklist, &-method, &-single
+			@extend %display-flex
+			width: 410px
+			border-right: 1px solid $border-color
+			padding-left: 15px
+			align-items: center
+			transition: all .3s ease
+			&:hover, &:active
+				background-color: $white
+			&:hover h3, &:active h3
+				font-weight: bold
+		&-worklist
+			.run 
+				cursor: pointer
+				color: blue
+				text-transform: uppercase
+				font-family: "Roboto Bold", "Helvetica", sans-serif
+				font-size: .9em
+				padding: 0 10px 0 25px
+				position: relative
+				&:after
+					content: ""
+					position: absolute
+					border: 6px solid transparent
+					border-left: 9px solid rgb(36, 115, 171)
+					top: 2px
+					left: 13px
+			span
+				text-transform: uppercase
+				font-size: .9em
+				padding-left: 17px
+			p 
+				font-size: .9em
+				padding: 0 18px
+				span 
+					padding: 2px
+					color: $text-color
+		&-method
+			width: 279px
+			p 
+				margin-left: 5px
+				font-size: .9em
+		&-single
+			width: 155px
+	&__mainPanel
+		@extend %display-flex
+		height: 80%
+		&-variable
+			width: 148px
+			height: 100%
+			border-right: 1px solid $border-color
+			.option 
+				width: 123px
+				padding: 9px 13px
+				font-size: .9em
+				color: $text-color
+				border-bottom: 1px solid $border-color
+				line-height: 1.2
+				transition: all .3s ease
+				&:hover, &:active
+					background-color: $white
+					border-right-color: $white
+		&-process
+			background-color: $white
+			width: 613px
+			border-right: 1px solid $border-color
+		&-settings
+			background-color: $white
+			width: 613px
+	&__bottomPanel
+		@extend %display-flex
+		justify-content: space-between
+		align-items: center
+		padding: 0 15px
+		border-top: 1px solid $border-color
+		height: 49px
+		background-color: $white
