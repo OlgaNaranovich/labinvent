@@ -1,0 +1,88 @@
+.widgets
+	width: 225px
+	// border-right: 1px solid #333 
+	position: relative
+	&:after
+		content: ""
+		position: absolute
+		top: 0
+		right: 0
+		width: 5px
+		height: 100%
+		background: -webkit-linear-gradient(right, $border-color, rgba(0, 0, 0, 0))
+		background: -o-linear-gradient(right, $border-color, rgba(0, 0, 0, 0))
+		background: linear-gradient(right, $border-color, rgba(0, 0, 0, 0))
+		z-index: -1
+	&__show
+		width: 30px
+		height: 30px
+		background-color: $main-color
+		border-radius: 50%
+		position: absolute
+		top: 36px
+		right: -16px
+		box-shadow: 1px 1px 5px $border-color
+		&:after 
+			content: ""
+			width: 7px
+			height: 7px
+			border-bottom: 1px solid #acaabe
+			border-left: 1px solid #acaabe
+			display: block
+			position: absolute
+			transform: rotate(45deg)
+			transition: all 0.15s ease-in-out
+			top: 12px
+			right: 9px
+		
+			
+	&__sampler, &__quatPamp
+		width: 188px
+		height: 188px
+		background-color: $white
+		border: 1px solid $border-color
+		margin: 15px 15px 0 
+		h4
+			font-size: .9em
+			font-family: "Roboto Bold", "Helvetica", sans-serif
+			border-bottom: 1px solid $border-color
+			position: relative
+			padding: 5px 25px
+			margin: 0
+			&:before
+				content: ""
+				position: absolute
+				top: 9px
+				left: 7px
+				width: 10px
+				height: 10px
+				background-color: green
+		&-content
+			padding: 30px 20px 0
+			position: relative
+			#sampler-icon
+				display: none
+			.sampler1
+				position: absolute
+				top: 9px
+				left: 3px
+	&__quatPamp 
+		h4 
+			&:before 
+				background-color: yellow
+		&-content
+			position: relative
+			.quatPamp-bottle1
+				position: absolute
+				top: 35px
+				left: 20px
+			.quatPamp-bottle2
+				position: absolute
+				top: 35px
+				left: 60px
+			.canvas
+				display: none
+			.quatPamp-3
+				position: absolute
+				top: 38%
+				right: 20px
