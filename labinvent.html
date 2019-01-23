@@ -49,7 +49,7 @@
 			<div class="widgets__sampler">
 				<h4>Sampler</h4>
 				<div class="widgets__sampler-content">
-					<svg id="sampler-icon" width="73" height="95"
+					<svg id="sampler-icon" class="sampler-icon" width="73" height="95"
 						viewBox="0 0 73 95"
 						version="1.1"
 						xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -133,10 +133,12 @@
 							<line y1="-0.5" x2="2" y2="-0.5" transform="matrix(1 8.74228e-08 -8.74228e-08 1 29 36)" stroke="#24384B"/>
 						</g>
 					</svg>
-					<svg class="sampler1" width="85" height="145" viewBox="0 0 73 95">
+					<svg class="syringe" width="85" height="145" viewBox="0 0 73 95">
 						<use xlink:href="#injection"></use>
 						<!-- <use xlink:href="img/svg/sampler-icon.svg#injection"></use> -->
 					</svg>
+					<img class="thermostat" src="img/thermostat.png" alt="">
+					<img class="vial" src="img/vial.png" alt="">
 				</div>
 			</div>
 
@@ -233,13 +235,74 @@
 					<div class="option">Intels</div>
 					<div class="option">Columns</div>
 				</div>
-				<div class="methods__mainPanel-process"></div>
-				<div class="methods__mainPanel-settings"></div>
+				<div class="methods__mainPanel-process">
+					<div class="methods__mainPanel-process--view">
+						<div class="leftPart">
+							<div class="inlet">
+								<small>Front Inlet</small>
+								<img src="img/inlet.png" alt="">
+								<strong>SS (H<sub>2</sub>)</strong>
+							</div>
+							<img class="arrow" src="img/arrow.png" alt="">
+							<div class="agilent">
+								<small>Agilent 19091Q-002</small>
+								<img src="img/column.png" alt="">
+								<p>60 Oc - 450 Oc (450 Oc)<br/>
+									25 m * 320 μm * 1μm</p>
+							</div>
+							<img class="arrow arrow2" src="img/arrow.png" alt="">
+							<div class="detector">
+								<small>Back Detector</small>
+								<img src="img/detector.png" alt="">
+								<strong>NPD</strong>
+							</div>
+						</div> 
+						<div class="rightPart">
+							<p>(Initial): 0 min<br/>
+									ArMe @ 35 Oc Oven<br/>
+									Out: Ambient Pressure<br/>
+									25 m * 320 μm * 1μm</p>
+						</div>
+					</div> <!-- END methods__mainPanel-process--view -->
+
+					<div class="methods__mainPanel-process--control methods-container">
+						<h4 class="methods-h4">Control Mode</h4>
+						<label class="container">On
+							<input type="checkbox" checked="checked">
+							<span class="checkmark"></span>
+						</label>
+						<div class="indicators-wrap">
+							<table class="indicators">
+								<tr><td>Flow</td><td>16.849</td><td>mL/min</td></tr>
+								<tr><td>Pressure</td><td>21.756</td><td>psi</td></tr>
+							</table>
+							<table class="indicators">
+								<tr><td>Average Velocity</td><td>198.05</td><td>cm/sec</td></tr>
+								<tr><td>Holdup Time</td><td>0.21038</td><td>min</td></tr>
+							</table>
+						</div>
+					</div> <!-- END .methods__mainPanel-process--control -->
+					<div class="methods__mainPanel-process--post methods-container">
+						<h4 class="methods-h4">Post Run</h4>
+							<table class="indicators">
+								<tr><td>Post Run</td><td>16.849</td><td>mL/min</td></tr>
+							</table>
+					</div>
+				</div> <!-- END methods__mainPanel-process -->
+				<div class="methods__mainPanel-settings">
+					<div class="methods__mainPanel-settings--container methods-container">
+						<h4 class="methods-h4">Pressure/Flow Settings</h4>
+					</div>
+				</div> <!-- END methods__mainPanel-settings -->
 			</div>
 			<div class="methods__bottomPanel">
 				<div class="methods__bottomPanel-options">
-					<img src="img/new.png" alt="new">
-					<img src="img/open.png" alt="open">
+					<div class="option option-new">
+						<img src="img/new.png" alt="new">
+					</div>
+					<div class="option option-open">
+						<img src="img/open.png" alt="open">
+					</div>
 				</div>
 				<div class="methods__bottomPanel-buttons">
 					<button>Save</button>

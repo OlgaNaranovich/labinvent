@@ -1,7 +1,8 @@
 .methods
 	@extend %display-flex
 	flex-direction: column
-	color: #000
+	color: $text-color-title
+	font-family: "HelveticaNeueCyr-Roman", "Helvetica", sans-serif
 	width: 1375px
 	height: 485px
 	border: 1px solid $border-color
@@ -77,9 +78,114 @@
 			background-color: $white
 			width: 613px
 			border-right: 1px solid $border-color
+			&--view
+				@extend %display-flex
+				justify-content: space-around
+				// font-family: "HelveticaNeueCyr-Roman", "Helvetica", sans-serif
+				color: $text-color-title
+				font-size: .62em
+				margin: 27px 0 30px
+				.leftPart
+					@extend %display-flex
+					align-items: flex-start
+					text-align: center
+					position: relative
+					small
+						font-size: .62rem
+						font-family: "Roboto Regular", "Helvetica", sans-serif
+						color: rgba($text-color-title, .5)
+					img
+						display: block
+						margin: auto
+					.arrow
+						height: 11px
+						position: absolute
+						top: 34%
+						left: 41px
+					.arrow2
+						left: 173px
+					strong
+						font-family: "HelveticaBold", "Helvetica", sans-serif
+					.inlet
+						margin-right: 40px
+					.inlet, .agilent
+						img 
+							margin: 9px auto
+					.detector
+						margin-left: 40px
+						img
+							margin: 15px auto
+				.rightPart
+					font-size: 0.75rem
+					border: 1px solid #2f3b4c
+					padding: 5px 20px 0 5px
+					line-height: 1.5
+					margin: 12px 0 6px
+					p 
+						margin: 0
+						line-height: 1.5
+			&--control
+				.container // CHECKBOX
+					display: block
+					position: relative
+					padding: 29px 0 0 48px
+					margin-bottom: 17px
+					cursor: pointer
+					font-size: .8rem
+					color: $text-color
+					-webkit-user-select: none
+					-moz-user-select: none
+					-ms-user-select: none
+					user-select: none
+					.checkmark 
+						position: absolute
+						top: 28px
+						left: 22px
+						height: 15px
+						width: 15px
+						background-color: #eee
+						border: 1px solid $accent-color
+						&:after 
+							content: ""
+							position: absolute
+							display: none
+					input 
+						position: absolute
+						opacity: 0
+						cursor: pointer
+						height: 0
+						width: 0
+						&:checked ~ .checkmark
+							background-color: $accent-color
+						&:checked ~ .checkmark:after 
+							display: block
+				.container .checkmark:after 
+					left: 4px
+					top: 3px
+					width: 5px
+					height: 5px
+					border: solid white
+					border-width: 0 2px 2px 0
+					-webkit-transform: rotate(45deg)
+					-ms-transform: rotate(45deg)
+					transform: rotate(45deg)  //END CHECKBOX
+				.indicators-wrap
+					@extend %display-flex
+					flex-wrap: wrap
+					justify-content: space-around
+					// table.indicators - in "_vars.sass"
+			&--post.methods-container
+				width: 45%
+				margin: 22px 17px
 		&-settings
 			background-color: $white
 			width: 613px
+			&--container
+				border-top: 1px solid #bfc2c4
+				position: relative
+				width: 95%
+				margin: auto
+
 	&__bottomPanel
 		@extend %display-flex
 		justify-content: space-between
@@ -88,3 +194,17 @@
 		border-top: 1px solid $border-color
 		height: 49px
 		background-color: $white
+		&-options
+			@extend %display-flex
+			.option
+				width: 25px
+				height: 25px
+				border: 1px solid $border-color
+				border-radius: 50%
+				margin: 0 14px
+			.option-new
+				img
+					margin: 7px
+			.option-open
+				img
+					margin: 10px 5px
