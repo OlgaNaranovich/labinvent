@@ -1,0 +1,71 @@
+.result
+	@extend %display-flex
+	justify-content: space-between
+	margin: 0 20px
+	&__chart
+		width: 775px
+		height: 506px
+		background-color: $white
+		border: $border
+		h2
+			border-bottom: $border
+			padding: 14px 17px
+			&:hover, &:active
+				text-decoration: underline
+		&-view
+			margin-left: 10px
+			@extend %display-flex
+			justify-content: space-between
+			&--draw
+				margin-left: 7px
+				span
+					font-size: .8rem
+					font-family: "Roboto Regular", "Helvetica", sans-serif
+					position: relative
+					transition: all .3s ease
+					padding: 7px 28px
+					display: inline-block
+					&:after
+						content: ""
+						width: 9px
+						height: 9px
+						border-radius: 50%
+						background-color: $chart1
+						position: absolute
+						left: 4px
+						top: 9px
+					&:before
+						content: ""
+						width: 18px
+						height: 1px
+						position: absolute
+						background-color: $chart1
+						left: 0
+						top: 13px
+					&:hover
+						// font-family: "Roboto Bold", "Helvetica", sans-serif
+						font-weight: bold
+				.chart2
+					&:after, &:before
+						background-color: $chart2
+				.chart3
+					&:after, &:before
+						background-color: $chart3
+				.live-chart
+					margin: 65px auto
+					position: relative
+					.chart-img
+						position: absolute
+						top: 65px
+						left: 64px
+			&--settings
+				width: 50px
+				margin: 8px 5px
+	&__spectra
+		width: 586px
+		height: 506px
+		background-color: $white
+		border: $border
+		h2
+			border-bottom: $border
+			padding: 15px

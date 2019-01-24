@@ -1,3 +1,4 @@
+
 .methods
 	@extend %display-flex
 	flex-direction: column
@@ -5,17 +6,17 @@
 	font-family: "HelveticaNeueCyr-Roman", "Helvetica", sans-serif
 	width: 1375px
 	height: 485px
-	border: 1px solid $border-color
+	border: $border
 	margin: 15px 20px
 	&__topPanel
 		@extend %display-flex
 		width: 100%
 		height: 45px
-		border-bottom: 1px solid $border-color
+		border-bottom: $border
 		&-worklist, &-method, &-single
 			@extend %display-flex
 			width: 410px
-			border-right: 1px solid $border-color
+			border-right: $border
 			padding-left: 15px
 			align-items: center
 			transition: all .3s ease
@@ -29,7 +30,7 @@
 				color: blue
 				text-transform: uppercase
 				font-family: "Roboto Bold", "Helvetica", sans-serif
-				font-size: .9em
+				font-size: .9rem
 				padding: 0 10px 0 25px
 				position: relative
 				&:after
@@ -41,10 +42,10 @@
 					left: 13px
 			span
 				text-transform: uppercase
-				font-size: .9em
+				font-size: .9rem
 				padding-left: 17px
 			p 
-				font-size: .9em
+				font-size: .9rem
 				padding: 0 18px
 				span 
 					padding: 2px
@@ -53,7 +54,7 @@
 			width: 279px
 			p 
 				margin-left: 5px
-				font-size: .9em
+				font-size: .9rem
 		&-single
 			width: 155px
 	&__mainPanel
@@ -62,13 +63,13 @@
 		&-variable
 			width: 148px
 			height: 100%
-			border-right: 1px solid $border-color
+			border-right: $border
 			.option 
 				width: 123px
 				padding: 9px 13px
-				font-size: .9em
+				font-size: .9rem
 				color: $text-color
-				border-bottom: 1px solid $border-color
+				border-bottom: $border
 				line-height: 1.2
 				transition: all .3s ease
 				&:hover, &:active
@@ -77,13 +78,12 @@
 		&-process
 			background-color: $white
 			width: 613px
-			border-right: 1px solid $border-color
+			border-right: $border
 			&--view
 				@extend %display-flex
 				justify-content: space-around
-				// font-family: "HelveticaNeueCyr-Roman", "Helvetica", sans-serif
 				color: $text-color-title
-				font-size: .62em
+				font-size: .62rem
 				margin: 27px 0 30px
 				.leftPart
 					@extend %display-flex
@@ -125,73 +125,82 @@
 						margin: 0
 						line-height: 1.5
 			&--control
-				.container // CHECKBOX
-					display: block
-					position: relative
-					padding: 29px 0 0 48px
-					margin-bottom: 17px
-					cursor: pointer
-					font-size: .8rem
-					color: $text-color
-					-webkit-user-select: none
-					-moz-user-select: none
-					-ms-user-select: none
-					user-select: none
-					.checkmark 
-						position: absolute
-						top: 28px
-						left: 22px
-						height: 15px
-						width: 15px
-						background-color: #eee
-						border: 1px solid $accent-color
-						&:after 
-							content: ""
-							position: absolute
-							display: none
-					input 
-						position: absolute
-						opacity: 0
-						cursor: pointer
-						height: 0
-						width: 0
-						&:checked ~ .checkmark
-							background-color: $accent-color
-						&:checked ~ .checkmark:after 
-							display: block
-				.container .checkmark:after 
-					left: 4px
-					top: 3px
-					width: 5px
-					height: 5px
-					border: solid white
-					border-width: 0 2px 2px 0
-					-webkit-transform: rotate(45deg)
-					-ms-transform: rotate(45deg)
-					transform: rotate(45deg)  //END CHECKBOX
+				@extend %methods-container
+				h4
+					@extend %methods-h4
+					font-family: "HelveticaBold", "Helvetica", sans-serif
+					background-color: $white
 				.indicators-wrap
 					@extend %display-flex
 					flex-wrap: wrap
 					justify-content: space-around
 					// table.indicators - in "_vars.sass"
-			&--post.methods-container
+			&--post
+				@extend %methods-container
+				h4
+					@extend %methods-h4
 				width: 45%
 				margin: 22px 17px
 		&-settings
 			background-color: $white
 			width: 613px
 			&--container
-				border-top: 1px solid #bfc2c4
+				@extend %methods-container
+				height: 95%
 				position: relative
-				width: 95%
-				margin: auto
-
+				margin-top: 18px
+				h4
+					@extend %methods-h4
+				.choose-settings
+					font-family: "Roboto Regular", "Helvetica", sans-serif
+					font-size: .70rem
+					.check-container
+						.checkmark
+							border-radius: 50%
+							border-color: $border-color
+							&:after
+								width: 5px
+								height: 5px
+								border-radius: 50%
+								background-color: $white
+								top: 4px
+				.settings-table 
+					width: 100%
+				.settings-table, th, td
+					border: $border
+					border-collapse: collapse
+					font-family: "HelveticaNeueCyr-Roman", "Helvetica", sans-serif
+					font-size: .75rem
+					.check-container
+						padding: 0
+						width: 20px
+						.checkmark
+							border-radius: 50%
+							border-color: $border-color
+							top: 50%
+							left: 0
+							&:after
+								width: 5px
+								height: 5px
+								border-radius: 50%
+								background-color: $white
+								top: 4px
+					th, td
+						text-align: center
+						height: 25px
+					th
+						background-color: #5fa1c1
+						color: $white
+				.swich-to-gradient
+					position: absolute
+					bottom: 15px
+					right: 0
 	&__bottomPanel
 		@extend %display-flex
 		justify-content: space-between
 		align-items: center
 		padding: 0 15px
-		border-top: 1px solid $border-color
+		border-top: $border
 		height: 49px
 		background-color: $white
 		&-options
@@ -199,7 +208,7 @@
 			.option
 				width: 25px
 				height: 25px
-				border: 1px solid $border-color
+				border: $border
 				border-radius: 50%
 				margin: 0 14px
 			.option-new

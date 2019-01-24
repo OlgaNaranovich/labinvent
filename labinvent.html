@@ -38,12 +38,11 @@
 			</div>
 		</div>
 	</header>
+	<aside class="search">
+		<input type="search" placeholder="Search"/>
+		<span class="search__icon"><img src="img/search.png"/></span>
+	</aside>
 	<main>
-		<aside class="search">
-			<input type="search" placeholder="Search"/>
-			<span class="search__icon"><img src="img/search.png"/></span>
-		</aside>
-
 		<section class="widgets">
 			<div class="widgets__show"></div>
 			<div class="widgets__sampler">
@@ -212,105 +211,200 @@
 			</div>
 
 		</section>
-		<section class="methods">
+		<section class="main">
+			<section class="methods">		
+				<div class="methods__topPanel">
+					<div class="methods__topPanel-worklist">
+						<h3>worklist</h3>
+						<div class="run">run</div>
+						<p><span>to do: </span>23 injections</p>
+						<span>02:15:00</span>
+					</div>
+					<div class="methods__topPanel-method">
+						<h3>method:</h3>
+						<p>Method1.amx(00:00/04:30)</p>
+					</div>
+					<div class="methods__topPanel-single">
+						<h3>single run</h3>
+					</div>
+				</div>
+				<div class="methods__mainPanel">
+					<div class="methods__mainPanel-variable">
+						<div class="option">ALS</div>
+						<div class="option">Intels</div>
+						<div class="option">Columns</div>
+					</div>
+					<div class="methods__mainPanel-process">
+						<div class="methods__mainPanel-process--view">
+							<div class="leftPart">
+								<div class="inlet">
+									<small>Front Inlet</small>
+									<img src="img/inlet.png" alt="">
+									<strong>SS (H<sub>2</sub>)</strong>
+								</div>
+								<img class="arrow" src="img/arrow.png" alt="">
+								<div class="agilent">
+									<small>Agilent 19091Q-002</small>
+									<img src="img/column.png" alt="">
+									<p>60 Oc - 450 Oc (450 Oc)<br/>
+										25 m * 320 μm * 1μm</p>
+								</div>
+								<img class="arrow arrow2" src="img/arrow.png" alt="">
+								<div class="detector">
+									<small>Back Detector</small>
+									<img src="img/detector.png" alt="">
+									<strong>NPD</strong>
+								</div>
+							</div> 
+							<div class="rightPart">
+								<p>(Initial): 0 min<br/>
+										ArMe @ 35 Oc Oven<br/>
+										Out: Ambient Pressure<br/>
+										25 m * 320 μm * 1μm</p>
+							</div>
+						</div> <!-- END methods__mainPanel-process--view -->
 			
-			<div class="methods__topPanel">
-				<div class="methods__topPanel-worklist">
-					<h3>worklist</h3>
-					<div class="run">run</div>
-					<p><span>to do: </span>23 injections</p>
-					<span>02:15:00</span>
-				</div>
-				<div class="methods__topPanel-method">
-					<h3>method:</h3>
-					<p>Method1.amx(00:00/04:30)</p>
-				</div>
-				<div class="methods__topPanel-single">
-					<h3>single run</h3>
-				</div>
-			</div>
-			<div class="methods__mainPanel">
-				<div class="methods__mainPanel-variable">
-					<div class="option">ALS</div>
-					<div class="option">Intels</div>
-					<div class="option">Columns</div>
-				</div>
-				<div class="methods__mainPanel-process">
-					<div class="methods__mainPanel-process--view">
-						<div class="leftPart">
-							<div class="inlet">
-								<small>Front Inlet</small>
-								<img src="img/inlet.png" alt="">
-								<strong>SS (H<sub>2</sub>)</strong>
+						<div class="methods__mainPanel-process--control">
+							<h4 cass="methods-h4">Control Mode</h4>
+							<label class="check-container">On
+								<input type="checkbox" checked="checked">
+								<span class="checkmark"></span>
+							</label>
+							<div class="indicators-wrap">
+								<table class="indicators">
+									<tr><td>Flow</td><td>16.849</td><td>mL/min</td></tr>
+									<tr><td>Pressure</td><td>21.756</td><td>psi</td></tr>
+								</table>
+								<table class="indicators">
+									<tr><td>Average Velocity</td><td>198.05</td><td>cm/sec</td></tr>
+									<tr><td>Holdup Time</td><td>0.21038</td><td>min</td></tr>
+								</table>
 							</div>
-							<img class="arrow" src="img/arrow.png" alt="">
-							<div class="agilent">
-								<small>Agilent 19091Q-002</small>
-								<img src="img/column.png" alt="">
-								<p>60 Oc - 450 Oc (450 Oc)<br/>
-									25 m * 320 μm * 1μm</p>
-							</div>
-							<img class="arrow arrow2" src="img/arrow.png" alt="">
-							<div class="detector">
-								<small>Back Detector</small>
-								<img src="img/detector.png" alt="">
-								<strong>NPD</strong>
-							</div>
-						</div> 
-						<div class="rightPart">
-							<p>(Initial): 0 min<br/>
-									ArMe @ 35 Oc Oven<br/>
-									Out: Ambient Pressure<br/>
-									25 m * 320 μm * 1μm</p>
+						</div> <!-- END .methods__mainPanel-process--control -->
+						<div class="methods__mainPanel-process--post">
+							<h4>Post Run</h4>
+								<table class="indicators">
+									<tr><td>Post Run</td><td>16.849</td><td>mL/min</td></tr>
+								</table>
 						</div>
-					</div> <!-- END methods__mainPanel-process--view -->
-
-					<div class="methods__mainPanel-process--control methods-container">
-						<h4 class="methods-h4">Control Mode</h4>
-						<label class="container">On
-							<input type="checkbox" checked="checked">
-							<span class="checkmark"></span>
-						</label>
-						<div class="indicators-wrap">
-							<table class="indicators">
-								<tr><td>Flow</td><td>16.849</td><td>mL/min</td></tr>
-								<tr><td>Pressure</td><td>21.756</td><td>psi</td></tr>
+					</div> <!-- END methods__mainPanel-process -->
+					<div class="methods__mainPanel-settings">
+						<div class="methods__mainPanel-settings--container">
+							<h4>Pressure/Flow Settings</h4>
+							<div class="choose-settings">
+								<label class="check-container">Constant Pressure
+									<input type="radio" id="constant-pressure"
+								 name="choose-settings" value="constant-pressure" checked="checked">
+								 <span class="checkmark"></span>
+								</label>
+								<label class="check-container">Ramped Pressure
+									<input type="radio" id="ramped-pressure"
+								 name="choose-settings" value="ramped-pressure">
+								 <span class="checkmark"></span>
+								</label>
+								<label class="check-container">Constant Flow
+									<input type="radio" id="constant-flow"
+								 name="choose-settings" value="constant-flow">
+								 <span class="checkmark"></span>
+								</label>
+								<label class="check-container">Ramped Flow
+									<input type="radio" id="ramped-pressure"
+								 name="choose-settings" value="ramped-pressure">
+								 <span class="checkmark"></span>
+								</label>
+							</div>
+							<table class="settings-table">
+								<tr>
+									<th></th>
+									<th>Ramp##</th>
+									<th>Rate, mL/min per min</th>
+									<th>Value, mL/min</th>
+									<th>Hold Time, min</th>
+									<th>Run Time, min</th>
+								</tr>
+								<tr>
+									<td></td>
+									<td>(Initial)</td>
+									<td></td>
+									<td>16.849</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="check-container">
+											<input type="checkbox">
+										 <span class="checkmark"></span>
+										</label>
+									</td>
+									<td>Ramp1</td>
+									<td>10</td>
+									<td>16.849</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="check-container">
+											<input type="checkbox">
+										 <span class="checkmark"></span>
+										</label>
+									</td>
+									<td>Ramp2</td>
+									<td>20</td>
+									<td>16.849</td>
+									<td>5</td>
+									<td>26</td>
+								</tr>
 							</table>
-							<table class="indicators">
-								<tr><td>Average Velocity</td><td>198.05</td><td>cm/sec</td></tr>
-								<tr><td>Holdup Time</td><td>0.21038</td><td>min</td></tr>
-							</table>
+							<div class="swich-to-gradient"><img src="img/switch-to-gradient.png" alt=""></div>
 						</div>
-					</div> <!-- END .methods__mainPanel-process--control -->
-					<div class="methods__mainPanel-process--post methods-container">
-						<h4 class="methods-h4">Post Run</h4>
-							<table class="indicators">
-								<tr><td>Post Run</td><td>16.849</td><td>mL/min</td></tr>
-							</table>
+					</div> <!-- END methods__mainPanel-settings -->
+				</div>
+				<div class="methods__bottomPanel">
+					<div class="methods__bottomPanel-options">
+						<div class="option option-new">
+							<img src="img/new.png" alt="new">
+						</div>
+						<div class="option option-open">
+							<img src="img/open.png" alt="open">
+						</div>
 					</div>
-				</div> <!-- END methods__mainPanel-process -->
-				<div class="methods__mainPanel-settings">
-					<div class="methods__mainPanel-settings--container methods-container">
-						<h4 class="methods-h4">Pressure/Flow Settings</h4>
-					</div>
-				</div> <!-- END methods__mainPanel-settings -->
-			</div>
-			<div class="methods__bottomPanel">
-				<div class="methods__bottomPanel-options">
-					<div class="option option-new">
-						<img src="img/new.png" alt="new">
-					</div>
-					<div class="option option-open">
-						<img src="img/open.png" alt="open">
+					<div class="methods__bottomPanel-buttons">
+						<button>Save</button>
+						<button>Save as</button>
+						<button>Cancel</button>
 					</div>
 				</div>
-				<div class="methods__bottomPanel-buttons">
-					<button>Save</button>
-					<button>Save as</button>
-					<button>Cancel</button>
+			</section>
+			<section class="result">
+				<div class="result__chart">
+					<h2>Live Chart</h2>
+					<div class="result__chart-view">
+						<div class="result__chart-view--draw">
+							<div class="choose-chart">
+								<span class="chart1">Plot</span>
+								<span class="chart2">Plot</span>
+								<span class="chart3">Plot</span>
+							</div>
+							<div class="live-chart">
+								<img src="img/chart-grid.png" alt="">
+								<img class="chart-img" src="img/chart.png" alt="">
+							</div>
+						</div>
+						<div class="result__chart-view--settings">
+							<img src="img/legend.png" alt="">
+							<img src="img/settings.png" alt="">
+							<img src="img/balance.png" alt="">
+						</div>
+					</div>
+					
 				</div>
-			</div>
-
+				<div class="result__spectra">
+					<h2>Spectra</h2>
+				</div>
+			</section>
+			
 		</section>
 	</main>
 
