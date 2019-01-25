@@ -38,13 +38,39 @@
 			</div>
 		</div>
 	</header>
-	<aside class="search">
-		<input type="search" placeholder="Search"/>
-		<span class="search__icon"><img src="img/search.png"/></span>
+	<aside class="aside">
+		<div class="aside__search">
+			<input type="search" placeholder="Search"/>
+			<span class="aside__search-icon"><img src="img/search.png"/></span>
+		</div>
+		<div class="aside__folderTree">
+			<img src="img/folder-tree.png" alt="">
+			<div class="aside__folderTree-content">
+				<p>Add Project</p>
+				<p>Add Project Group</p>
+				<p>Settings</p>
+				<p>Delete</p>
+			</div>
+		</div>
+		<div class="aside__run">
+			<div class="aside__run-timer">
+				<div class="aside__run-timer--filling"></div>
+				<span class="aside__run-timer--current">Run 00:23/01:00</span>
+				<span class="aside__run-timer--remaining">-00:47</span>
+			</div>
+			<div class="aside__run-status">
+				<p class="aside__run-status--swich">run</p>
+				<div class="aside__run-status--indicator">
+					<span class="on">on</span>
+					<span class="off">off</span>
+				</div>
+			</div>
+
+		</div>
 	</aside>
 	<main>
 		<section class="widgets">
-			<div class="widgets__show"></div>
+			
 			<div class="widgets__sampler">
 				<h4>Sampler</h4>
 				<div class="widgets__sampler-content">
@@ -212,6 +238,7 @@
 
 		</section>
 		<section class="main">
+			<div class="show-widgets"></div>
 			<section class="methods">		
 				<div class="methods__topPanel">
 					<div class="methods__topPanel-worklist">
@@ -229,7 +256,7 @@
 					</div>
 				</div>
 				<div class="methods__mainPanel">
-					<div class="methods__mainPanel-variable">
+					<div class="methods__mainPanel-options">
 						<div class="option">ALS</div>
 						<div class="option">Intels</div>
 						<div class="option">Columns</div>
@@ -283,9 +310,9 @@
 						</div> <!-- END .methods__mainPanel-process--control -->
 						<div class="methods__mainPanel-process--post">
 							<h4>Post Run</h4>
-								<table class="indicators">
-									<tr><td>Post Run</td><td>16.849</td><td>mL/min</td></tr>
-								</table>
+							<table class="indicators">
+								<tr><td>Post Run</td><td>16.849</td><td>mL/min</td></tr>
+							</table>
 						</div>
 					</div> <!-- END methods__mainPanel-process -->
 					<div class="methods__mainPanel-settings">
@@ -379,7 +406,7 @@
 			</section>
 			<section class="result">
 				<div class="result__chart">
-					<h2>Live Chart</h2>
+					<h2 tabindex="0">Live Chart</h2>
 					<div class="result__chart-view">
 						<div class="result__chart-view--draw">
 							<div class="choose-chart">
@@ -395,13 +422,29 @@
 						<div class="result__chart-view--settings">
 							<img src="img/legend.png" alt="">
 							<img src="img/settings.png" alt="">
-							<img src="img/balance.png" alt="">
+							<img class="balance" src="img/balance.png" alt="">
+							<div class="icons-grid">
+								<img src="img/icons-grid-test.png" alt="">
+								<img src="img/icons-grid-zero.png" alt="">
+								<img src="img/icons-grid-y.png" alt="">
+								<img src="img/icons-grid-x.png" alt="">
+								<img src="img/icons-grid-base.png" alt="">
+							</div>
+							<img class="cursor" src="img/cursor.png" alt="">
+							<img class="together" src="img/together.png" alt="">
+							<img class="adj" src="img/adj.png" alt="">
 						</div>
 					</div>
 					
 				</div>
 				<div class="result__spectra">
-					<h2>Spectra</h2>
+					<h2 tabindex="0">Spectra</h2>
+					<div class="result__spectra-view">
+						<div class="result__spectra-view--settings">
+							<img src="img/legend.png" alt="">
+							<img src="img/settings.png" alt="">
+						</div>
+					</div>
 				</div>
 			</section>
 			

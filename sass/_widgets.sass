@@ -1,6 +1,8 @@
 .widgets
 	width: 225px 
+	left: 0
 	position: relative
+	transition: left .5s ease
 	&:after
 		content: ""
 		position: absolute
@@ -12,27 +14,7 @@
 		background: -o-linear-gradient(right, $border-color, rgba(0, 0, 0, 0))
 		background: linear-gradient(right, $border-color, rgba(0, 0, 0, 0))
 		z-index: -1
-	&__show
-		width: 30px
-		height: 30px
-		background-color: $main-color
-		border-radius: 50%
-		position: absolute
-		top: 36px
-		right: -16px
-		box-shadow: 1px 1px 5px $border-color
-		&:after 
-			content: ""
-			width: 7px
-			height: 7px
-			border-bottom: 1px solid #acaabe
-			border-left: 1px solid #acaabe
-			display: block
-			position: absolute
-			transform: rotate(45deg)
-			transition: all 0.15s ease-in-out
-			top: 12px
-			right: 9px
+	
 	&__sampler, &__quatPamp
 		width: 188px
 		height: 188px

@@ -1,45 +1,137 @@
-.search
++keyframes(timer)
+	0%
+		width: 0%
+	100%
+		width: 100%
+
+.aside
 	width: 278px
-	height: 1030px
+	height: 1040px
 	background-color: #e1e5e8
 	border: 1px solid #cfd7dc
 	position: relative
 	float: left
-	input
-		background-color: transparent
-		padding-left: 20px
-		height: 60px
+	z-index: 3
+	&__search
+		input
+			background-color: transparent
+			padding-left: 20px
+			height: 60px
+			width: 100%
+			border: none
+			font-size: .75em
+			border-bottom: 1px solid #bdc9d1
+			color: $text-color-title
+			white-space: nowrap
+			overflow: hidden
+			&::-webkit-input-placeholder
+				font-family: "Roboto Regular", "Helvetica", sans-serif
+				color: $text-color-title
+			&:focus::-webkit-input-placeholder
+				color: transparent
+			&::-moz-placeholder
+				font-family: "Roboto Regular", "Helvetica", sans-serif
+				color: $text-color-title
+			&:focus::-moz-placeholder
+				color: transparent
+			&:-moz-placeholder
+				font-family: "Roboto Regular", "Helvetica", sans-serif
+				color: $text-color-title
+			&:focus:-moz-placeholder
+				color: transparent
+			&:-ms-input-placeholde
+				font-family: "Roboto Regular", "Helvetica", sans-serif
+				color: $text-color-title
+			&:focus:-ms-input-placeholder
+				color: transparent
+			&:focus, &:hover, &:active
+				outline: none
+		&-icon
+			position: absolute
+			top: 22px
+			right: 20px
+			cursor: pointer 
+	&__folderTree
+		opacity: 0
+		position: relative
+		transition: opacity .2s ease
+		&-content
+			position: absolute
+			top: 20px
+			right: 20px
+			font-size: .6rem
+			font-family: "Roboto Regular", sans-serif
+			background-color: $main-color
+			border: $border
+			padding: 10px
+			p:not(:last-child)
+				padding-bottom: 5px
+				cursor: pointer
+			p:hover
+				color: $accent-color
+	.show-folderTree
+		opacity: 1
+	&__run
 		width: 100%
-		border: none
-		font-size: .75em
-		border-bottom: 1px solid #bdc9d1
-		color: $text-color-title
-		white-space: nowrap
-		overflow: hidden
-		&::-webkit-input-placeholder
-			font-family: "Roboto Regular", "Helvetica", sans-serif
-			color: $text-color-title
-		&:focus::-webkit-input-placeholder
-			color: transparent
-		&::-moz-placeholder
-			font-family: "Roboto Regular", "Helvetica", sans-serif
-			color: $text-color-title
-		&:focus::-moz-placeholder
-			color: transparent
-		&:-moz-placeholder
-			font-family: "Roboto Regular", "Helvetica", sans-serif
-			color: $text-color-title
-		&:focus:-moz-placeholder
-			color: transparent
-		&:-ms-input-placeholde
-			font-family: "Roboto Regular", "Helvetica", sans-serif
-			color: $text-color-title
-		&:focus:-ms-input-placeholder
-			color: transparent
-		&:focus, &:hover, &:active
-			outline: none
-	&__icon
 		position: absolute
-		top: 22px
-		right: 20px
-		cursor: pointer 
+		bottom: 0
+		left: 0
+		&-timer, &-status
+			@extend %display-flex
+			justify-content: space-between
+			align-items: center
+			padding: 0 20px
+		&-timer
+			height: 25px
+			background-color: #d5d9db
+			font-size: .75rem
+			color: $text-color-title
+			line-height: 2.5
+			position: relative
+			&--filling
+				background-color: #c1c4c5
+				animation: timer 7s linear 0s infinite
+				height: 25px
+				position: absolute
+				left: 0
+				top: 0
+				width: 0%
+			span
+				z-index: 4
+		&-status
+			height: 50px
+			background-color: #2575aa
+			color: $white
+			&--swich
+				text-transform: uppercase
+				font-size: 1.4rem
+			&--indicator
+				span
+					font-size: .5em
+					text-transform: uppercase
+					line-height: 2.5
+					position: relative
+					margin-left: 17px
+					&:after
+						content: ""
+						position: absolute
+						width: 23px
+						height: 23px
+						border-radius: 50%
+						border: 1px solid $white
+						text-outline: -8px
+						left: -7px
+					&:before
+						content: ""
+						width: 5px
+						height: 5px
+						background-color: #14741a
+						border: 2px solid #2575aa
+						position: absolute
+						top: -8px
+						left: 1px
+						display: block
+						z-index: 5
+				.off
+					&:before
+						background-color: #8c9092

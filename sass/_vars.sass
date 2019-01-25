@@ -17,10 +17,19 @@ $chart3: #f5ad3c
 %nice-select
 	font-size: 1em
 	line-height: 2.5
-	// border: none
 	padding-left: 0
 	color: $text-color
 	background-color: transparent
+
+=keyframes($name)
+	@-webkit-keyframes #{$name}
+		@content
+	@-moz-keyframes #{$name}
+		@content
+	@-ms-keyframes #{$name}
+		@content
+	@keyframes #{$name}
+		@content
 
 // CHECKBOX-RADIO custom
 .check-container
@@ -98,3 +107,4 @@ table.indicators
 	position: absolute
 	top: -10px
 	left: 11px
+

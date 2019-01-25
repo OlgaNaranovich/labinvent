@@ -7,65 +7,127 @@
 		height: 506px
 		background-color: $white
 		border: $border
+		overflow: hidden
 		h2
-			border-bottom: $border
 			padding: 14px 17px
-			&:hover, &:active
-				text-decoration: underline
+			display: inline-block
+			border-bottom: 2px solid transparent
+			cursor: pointer
+			&:hover, &:focus
+				border-color: $text-color-title
+			&:hover ~ .result__chart-view .result__chart-view--settings .adj,
+			&:focus ~ .result__chart-view .result__chart-view--settings .adj
+				opacity: 1
 		&-view
-			margin-left: 10px
+			border-top: $border
 			@extend %display-flex
-			justify-content: space-between
 			&--draw
-				margin-left: 7px
-				span
-					font-size: .8rem
-					font-family: "Roboto Regular", "Helvetica", sans-serif
-					position: relative
-					transition: all .3s ease
-					padding: 7px 28px
-					display: inline-block
-					&:after
-						content: ""
-						width: 9px
-						height: 9px
-						border-radius: 50%
-						background-color: $chart1
-						position: absolute
-						left: 4px
-						top: 9px
-					&:before
-						content: ""
-						width: 18px
-						height: 1px
-						position: absolute
-						background-color: $chart1
-						left: 0
-						top: 13px
-					&:hover
-						// font-family: "Roboto Bold", "Helvetica", sans-serif
-						font-weight: bold
-				.chart2
-					&:after, &:before
-						background-color: $chart2
-				.chart3
-					&:after, &:before
-						background-color: $chart3
+				width: 710px
+				.choose-chart
+					border-bottom: $border
+					padding-left: 18px
+					span
+						font-size: .8rem
+						font-family: "Roboto Regular", "Helvetica", sans-serif
+						position: relative
+						transition: all .3s ease
+						padding: 7px 28px
+						display: inline-block
+						cursor: pointer
+						&:after
+							content: ""
+							width: 9px
+							height: 9px
+							border-radius: 50%
+							background-color: $chart1
+							position: absolute
+							left: 4px
+							top: 9px
+						&:before
+							content: ""
+							width: 18px
+							height: 1px
+							position: absolute
+							background-color: $chart1
+							left: 0
+							top: 13px
+						&:hover
+							font-weight: bold
+					.chart2
+						&:after, &:before
+							background-color: $chart2
+					.chart3
+						&:after, &:before
+							background-color: $chart3
 				.live-chart
 					margin: 65px auto
 					position: relative
+					padding-left: 15px
 					.chart-img
 						position: absolute
 						top: 65px
-						left: 64px
+						left: 79px
+
 			&--settings
 				width: 50px
-				margin: 8px 5px
+				padding: 8px
+				position: relative
+				border-left: $border
+				img
+					cursor: pointer
+					margin-bottom: 3px
+				.adj, .cursor, .together, .icons-grid
+					opacity: 0
+					transition: all .2s ease
+				.icons-grid
+					position: absolute
+					top: 117px
+					left: 3px
+					@extend %display-flex
+					&:hover
+						opacity: 1
+						left: -172px
+						transition: all .3s ease
+					img
+						transition: all .2s ease
+						&:hover
+							transform: scale(1.05, 1.05)
+				.adj
+					position: absolute
+					top: 71%
+					transition: opacity .3s ease
+			&--draw	
+				.live-chart
+					.chart-img
+						&:hover .adj
+							opacity: 1
 	&__spectra
 		width: 586px
 		height: 506px
 		background-color: $white
 		border: $border
 		h2
-			border-bottom: $border
 			padding: 15px
+			display: inline-block
+			border-bottom: 2px solid transparent
+			cursor: pointer
+			&:hover, &:focus
+				border-color: $text-color-title
+			&:hover ~ .result__spectra-view .result__spectra-view--settings, 
+			&:focus ~ .result__spectra-view .result__spectra-view--settings
+				opacity: 1
+		&-view
+			border-top: $border
+			height: 100%
+			&--settings
+				opacity: 0
+				width: 50px
+				padding: 8px
+				position: relative
+				border-left: $border
+				float: right
+				height: 87%
+				transition: all .2s ease
+				img
+					cursor: pointer
+		

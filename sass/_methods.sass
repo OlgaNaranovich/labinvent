@@ -1,219 +1,259 @@
 
-.methods
-	@extend %display-flex
-	flex-direction: column
-	color: $text-color-title
-	font-family: "HelveticaNeueCyr-Roman", "Helvetica", sans-serif
-	width: 1375px
-	height: 485px
-	border: $border
-	margin: 15px 20px
-	&__topPanel
+.main
+	position: relative
+	left: 0
+	transition: left .7s
+	.show-widgets
+		width: 30px
+		height: 30px
+		background-color: $main-color
+		border-radius: 50%
+		position: absolute
+		top: 36px
+		left: -12px
+		box-shadow: 1px 1px 5px $border-color
+		cursor: pointer
+		z-index: 5
+		&:after 
+			content: ""
+			width: 7px
+			height: 7px
+			border-bottom: 1px solid #acaabe
+			border-left: 1px solid #acaabe
+			display: block
+			position: absolute
+			transform: rotate(45deg)
+			transition: all 0.15s ease-in-out
+			top: 12px
+			right: 9px
+	.methods
 		@extend %display-flex
-		width: 100%
-		height: 45px
-		border-bottom: $border
-		&-worklist, &-method, &-single
+		flex-direction: column
+		color: $text-color-title
+		font-family: "HelveticaNeueCyr-Roman", "Helvetica", sans-serif
+		width: 1375px
+		height: 485px
+		border: $border
+		margin: 15px 20px
+		&__topPanel
 			@extend %display-flex
-			width: 410px
-			border-right: $border
-			padding-left: 15px
-			align-items: center
-			transition: all .3s ease
-			&:hover, &:active
-				background-color: $white
-			&:hover h3, &:active h3
-				font-weight: bold
-		&-worklist
-			.run 
-				cursor: pointer
-				color: blue
-				text-transform: uppercase
-				font-family: "Roboto Bold", "Helvetica", sans-serif
-				font-size: .9rem
-				padding: 0 10px 0 25px
-				position: relative
-				&:after
-					content: ""
-					position: absolute
-					border: 6px solid transparent
-					border-left: 9px solid rgb(36, 115, 171)
-					top: 2px
-					left: 13px
-			span
-				text-transform: uppercase
-				font-size: .9rem
-				padding-left: 17px
-			p 
-				font-size: .9rem
-				padding: 0 18px
-				span 
-					padding: 2px
-					color: $text-color
-		&-method
-			width: 279px
-			p 
-				margin-left: 5px
-				font-size: .9rem
-		&-single
-			width: 155px
-	&__mainPanel
-		@extend %display-flex
-		height: 80%
-		&-variable
-			width: 148px
-			height: 100%
-			border-right: $border
-			.option 
-				width: 123px
-				padding: 9px 13px
-				font-size: .9rem
-				color: $text-color
-				border-bottom: $border
-				line-height: 1.2
-				transition: all .3s ease
-				&:hover, &:active
-					background-color: $white
-					border-right-color: $white
-		&-process
-			background-color: $white
-			width: 613px
-			border-right: $border
-			&--view
+			width: 100%
+			height: 45px
+			border-bottom: $border
+			&-worklist, &-method, &-single
 				@extend %display-flex
-				justify-content: space-around
-				color: $text-color-title
-				font-size: .62rem
-				margin: 27px 0 30px
-				.leftPart
-					@extend %display-flex
-					align-items: flex-start
-					text-align: center
-					position: relative
-					small
-						font-size: .62rem
-						font-family: "Roboto Regular", "Helvetica", sans-serif
-						color: rgba($text-color-title, .5)
-					img
-						display: block
-						margin: auto
-					.arrow
-						height: 11px
-						position: absolute
-						top: 34%
-						left: 41px
-					.arrow2
-						left: 173px
-					strong
-						font-family: "HelveticaBold", "Helvetica", sans-serif
-					.inlet
-						margin-right: 40px
-					.inlet, .agilent
-						img 
-							margin: 9px auto
-					.detector
-						margin-left: 40px
-						img
-							margin: 15px auto
-				.rightPart
-					font-size: 0.75rem
-					border: 1px solid #2f3b4c
-					padding: 5px 20px 0 5px
-					line-height: 1.5
-					margin: 12px 0 6px
-					p 
-						margin: 0
-						line-height: 1.5
-			&--control
-				@extend %methods-container
-				h4
-					@extend %methods-h4
-					font-family: "HelveticaBold", "Helvetica", sans-serif
+				width: 410px
+				border-right: $border
+				padding-left: 15px
+				align-items: center
+				transition: all .3s ease
+				&:hover, &:focus
 					background-color: $white
-				.indicators-wrap
-					@extend %display-flex
-					flex-wrap: wrap
-					justify-content: space-around
-					// table.indicators - in "_vars.sass"
-			&--post
-				@extend %methods-container
-				h4
-					@extend %methods-h4
-				width: 45%
-				margin: 22px 17px
-		&-settings
-			background-color: $white
-			width: 613px
-			&--container
-				@extend %methods-container
-				height: 95%
-				position: relative
-				margin-top: 18px
-				h4
-					@extend %methods-h4
-				.choose-settings
-					font-family: "Roboto Regular", "Helvetica", sans-serif
-					font-size: .70rem
-					.check-container
-						.checkmark
-							border-radius: 50%
-							border-color: $border-color
-							&:after
-								width: 5px
-								height: 5px
-								border-radius: 50%
-								background-color: $white
-								top: 4px
-				.settings-table 
-					width: 100%
-				.settings-table, th, td
-					border: $border
-					border-collapse: collapse
-					font-family: "HelveticaNeueCyr-Roman", "Helvetica", sans-serif
-					font-size: .75rem
-					.check-container
-						padding: 0
-						width: 20px
-						.checkmark
-							border-radius: 50%
-							border-color: $border-color
-							top: 50%
-							left: 0
-							&:after
-								width: 5px
-								height: 5px
-								border-radius: 50%
-								background-color: $white
-								top: 4px
-					th, td
-						text-align: center
-						height: 25px
-					th
-						background-color: #5fa1c1
-						color: $white
-				.swich-to-gradient
-					position: absolute
-					bottom: 15px
-					right: 0
-	&__bottomPanel
-		@extend %display-flex
-		justify-content: space-between
-		align-items: center
-		padding: 0 15px
-		border-top: $border
-		height: 49px
-		background-color: $white
-		&-options
+				&:hover h3, &:focus h3
+					font-weight: bold
+			&-worklist
+				.run 
+					cursor: pointer
+					color: blue
+					text-transform: uppercase
+					font-family: "Roboto Bold", "Helvetica", sans-serif
+					font-size: .9rem
+					padding: 0 10px 0 25px
+					position: relative
+					&:after
+						content: ""
+						position: absolute
+						border: 6px solid transparent
+						border-left: 9px solid rgb(36, 115, 171)
+						top: 2px
+						left: 13px
+				span
+					text-transform: uppercase
+					font-size: .9rem
+					padding-left: 17px
+				p 
+					font-size: .9rem
+					padding: 0 18px
+					span 
+						padding: 2px
+						color: $text-color
+			&-method
+				width: 279px
+				p 
+					margin-left: 5px
+					font-size: .9rem
+			&-single
+				width: 155px
+		&__mainPanel
 			@extend %display-flex
-			.option
-				width: 25px
-				height: 25px
-				border: $border
-				border-radius: 50%
-				margin: 0 14px
-			.option-new
-				img
-					margin: 7px
-			.option-open
-				img
-					margin: 10px 5px
+			height: 80%
+			&-options
+				width: 148px
+				height: 100%
+				border-right: $border
+				.option 
+					width: 122px
+					padding: 9px 13px
+					font-size: .9rem
+					color: $text-color
+					background-color: $main-color
+					border-bottom: $border
+					line-height: 1.2
+					transition: all .3s ease
+					&:hover, &:focus
+						width: 123px
+						background-color: $white
+						border-right-color: $white
+			&-process
+				background-color: $white
+				width: 613px
+				border-right: $border
+				&--view
+					@extend %display-flex
+					justify-content: space-around
+					color: $text-color-title
+					font-size: .62rem
+					margin: 27px 0 38px
+					.leftPart
+						@extend %display-flex
+						align-items: flex-start
+						text-align: center
+						position: relative
+						small
+							font-size: .62rem
+							font-family: "Roboto Regular", "Helvetica", sans-serif
+							color: rgba($text-color-title, .5)
+						img
+							display: block
+							margin: auto
+						.arrow
+							height: 11px
+							position: absolute
+							top: 34%
+							left: 41px
+						.arrow2
+							left: 173px
+						strong
+							font-family: "HelveticaBold", "Helvetica", sans-serif
+						.inlet
+							margin-right: 40px
+						.inlet, .agilent
+							img 
+								margin: 9px auto
+						.detector
+							margin-left: 40px
+							img
+								margin: 15px auto
+					.rightPart
+						font-size: 0.75rem
+						border: 1px solid #2f3b4c
+						padding: 5px 20px 0 5px
+						line-height: 1.5
+						margin: 12px 0 6px
+						p 
+							margin: 0
+							line-height: 1.5
+				&--control
+					@extend %methods-container
+					h4
+						@extend %methods-h4
+						font-family: "HelveticaBold", "Helvetica", sans-serif
+						background-color: $white
+					.indicators-wrap
+						@extend %display-flex
+						flex-wrap: wrap
+						justify-content: space-between
+						margin: 0 20px
+						// table.indicators - in "_vars.sass"
+				&--post
+					@extend %methods-container
+					width: 45%
+					margin: 22px 17px
+					h4
+						@extend %methods-h4
+					.indicators
+						margin: 24px 0 0 15px
+			&-settings
+				background-color: $white
+				width: 613px
+				&--container
+					@extend %methods-container
+					height: 95%
+					position: relative
+					margin-top: 18px
+					h4
+						@extend %methods-h4
+					.choose-settings
+						font-family: "Roboto Regular", "Helvetica", sans-serif
+						font-size: .70rem
+						.check-container
+							.checkmark
+								border-radius: 50%
+								border-color: $border-color
+								&:after
+									width: 5px
+									height: 5px
+									border-radius: 50%
+									background-color: $white
+									top: 4px
+					.settings-table 
+						width: 100%
+					.settings-table, th, td
+						border: $border
+						border-collapse: collapse
+						font-family: "HelveticaNeueCyr-Roman", "Helvetica", sans-serif
+						font-size: .75rem
+						.check-container
+							padding: 0
+							width: 20px
+							.checkmark
+								border-radius: 50%
+								border-color: $border-color
+								top: 50%
+								left: 0
+								&:after
+									width: 5px
+									height: 5px
+									border-radius: 50%
+									background-color: $white
+									top: 4px
+						th, td
+							text-align: center
+							height: 25px
+						th
+							background-color: #5fa1c1
+							color: $white
+					.swich-to-gradient
+						position: absolute
+						bottom: 15px
+						right: 0
+						cursor: pointer
+		&__bottomPanel
+			@extend %display-flex
+			justify-content: space-between
+			align-items: center
+			padding: 0 15px
+			border-top: $border
+			height: 49px
+			background-color: $white
+			&-options
+				@extend %display-flex
+				.option
+					width: 25px
+					height: 25px
+					border: $border
+					border-radius: 50%
+					margin: 0 14px
+					cursor: pointer
+					transition: all .3s ease
+					&:hover
+						border-color: $accent-color
+				.option-new
+					img
+						margin: 7px
+				.option-open
+					img
+						margin: 10px 5px
+
+.hidden
+		left: -225px
